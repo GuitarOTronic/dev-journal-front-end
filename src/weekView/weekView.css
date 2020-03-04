@@ -1,0 +1,25 @@
+.day-container{
+  border: 1px solid black; 
+  min-width: 14vw; 
+  max-width: 15vw;
+}
+
+.day-container div{
+  padding-top: 3px;
+}
+
+.rating-date-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.features-container{
+  display: flex;
+  padding: 0 5px;
+}
+
+.notes-container{
+  padding: 0 5px;
+}
+

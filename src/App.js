@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import axios from 'axios'
 import './App.css';
+import WeekView from './weekView/WeekView';
+import Reminders from './reminders/Reminders'
+import Reads from './reads/Reads'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      weekData: []
+    }
+  }
+
+  componentDidMount = async () => {
+    const config = {
+      headers: { 'Access-Control-Allow-Origin': '*' }
+    }
+    const res = await axios.get('http://localhost:8888/week/currentWeek', config)
+    console.log('res', res)
+    this.setState({ weekData: res.data })
+  }
+
+
+  render() {
+    return (
+      <div className="app-container">
+        <h1>Dev Journal</h1>
+        <WeekView weekData={this.state.weekData} />
+        {/* Day of
+          Feature worked
+          Notes
+        */}
+        {/* <Reminders/> */}
+        {/* <Reads/> */}
+      </div>
+    );
+
+  }
 }
 
 export default App;
