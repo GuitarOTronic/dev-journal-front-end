@@ -18,8 +18,7 @@ class App extends Component {
       headers: { 'Access-Control-Allow-Origin': '*' }
     }
     const res = await axios.get('http://localhost:8888/week/currentWeek', config)
-    console.log('res', res)
-    this.setState({ weekData: res.data })
+    this.setState({ weekData: res.data.weekNotes })
   }
 
 
