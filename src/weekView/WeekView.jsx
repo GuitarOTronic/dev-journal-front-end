@@ -17,7 +17,6 @@ export default function WeekView(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       {weekData.map(day => {
-        console.log("day", day)
         const rating = getRating(day.rating)
         return <div key={day.id} className="day-container">
           <div className="rating-date-container">
