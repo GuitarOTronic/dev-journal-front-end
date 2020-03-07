@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';
 import WeekView from './weekView/WeekView';
-import Reminders from './reminders/Reminders'
-import Reads from './reads/Reads'
+import Note from './note/Note'
+// import Reminders from './reminders/Reminders'
+// import Reads from './reads/Reads'
 
 class App extends Component {
   constructor(props) {
@@ -48,10 +49,10 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <h1>Dev Journal</h1>
         <WeekView weekData={this.state.weekData} />
         <button id="last-week" onClick={this.handleWeekClick}>Last Week</button>
         <button id="next-week" onClick={this.handleWeekClick}>Next Week</button>
+        <Note/>
         {/* Day of
           Feature worked
           Notes

@@ -1,0 +1,12 @@
+.note-container{
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 4000px;
+}
+
+.note-container textarea {
+  font-size: 14px;
+  outline: none;
+  resize: none;
+}
